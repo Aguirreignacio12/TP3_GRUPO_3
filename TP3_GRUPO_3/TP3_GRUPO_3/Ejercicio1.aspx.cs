@@ -11,7 +11,28 @@ namespace TP3_GRUPO_3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+        }
 
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = true;
+            foreach (ListItem item in DDLLocalidades.Items)
+            {
+                if (TextBoxLocalidad.Text.ToUpper() == item.Text.ToUpper())
+                {
+                    args.IsValid = false;
+                }
+            }
+        }
+
+        protected void BtnGuardarLocalidad_Click(object sender, EventArgs e)
+        {
+            if (RfvLocalidad.IsValid == true && RevLocalidad.IsValid == true && CvLocalidad.IsValid == true)
+            {
+                DDLLocalidades.Items.Add(TextBoxLocalidad.Text);
+                TextBoxLocalidad.Text = string.Empty;
+            }
         }
     }
 }

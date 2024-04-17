@@ -22,11 +22,15 @@
                 </tr>
                 <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Nombre de la localidad"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxLocalidad" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBoxLocalidad" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RfvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ErrorMessage="Ingrese nueva localidad">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ErrorMessage="Contiene caracteres invalidos" ValidationExpression="[\w ]+">*</asp:RegularExpressionValidator>
+                        <asp:CustomValidator ID="CvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ErrorMessage="Localidad ya existente" OnServerValidate="CustomValidator1_ServerValidate">*</asp:CustomValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><asp:Button ID="BtnGuardarLocalidad" runat="server" Text="Guardar Localidad" /></td>
+                    <td><asp:Button ID="BtnGuardarLocalidad" runat="server" Text="Guardar Localidad" OnClick="BtnGuardarLocalidad_Click" /></td>
                 </tr>
                 <tr>
                     <td></td>
