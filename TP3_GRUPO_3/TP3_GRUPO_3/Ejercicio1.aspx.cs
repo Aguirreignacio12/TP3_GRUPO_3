@@ -34,5 +34,11 @@ namespace TP3_GRUPO_3
                 TextBoxLocalidad.Text = string.Empty;
             }
         }
+
+        protected void BtnGuardarUsuario_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

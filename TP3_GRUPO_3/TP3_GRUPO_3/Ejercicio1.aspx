@@ -24,13 +24,14 @@
                     <td><asp:Label ID="Label1" runat="server" Text="Nombre de la localidad"></asp:Label></td>
                     <td><asp:TextBox ID="TextBoxLocalidad" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RfvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad">Ingrese nueva localidad</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RevLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ValidationExpression="[\w ]+">Contiene caracteres invalidos</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RevLocalidad" runat="server" ControlToValidate="TextBoxLocalidad"  ValidationExpression="[\w ]+">Contiene caracteres invalidos</asp:RegularExpressionValidator>
                         <asp:CustomValidator ID="CvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" OnServerValidate="CustomValidator1_ServerValidate">Localidad ya existente</asp:CustomValidator>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><asp:Button ID="BtnGuardarLocalidad" runat="server" Text="Guardar Localidad" OnClick="BtnGuardarLocalidad_Click" /></td>
+                    <td><asp:Button ID="BtnGuardarLocalidad" runat="server" Text="Guardar Localidad" OnClick="BtnGuardarLocalidad_Click" Validation="Localidades" ValidationGroup="Localidades" UseSubmitBehavior="False" />
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -38,36 +39,48 @@
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblUsuario" runat="server" Text="Nombre de usuario:"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RFVUsuario" runat="server" ControlToValidate="TextBoxUsuario" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="LblContraseña" runat="server" Text="Contraseña:"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxContraseña" runat="server"></asp:TextBox></td>
+                    <td><asp:Label ID="LblContrasenia" runat="server" Text="Contraseña:"></asp:Label></td>
+                    <td><asp:TextBox ID="TextBoxContrasenia" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RFVContrasenia" runat="server" ControlToValidate="TextBoxContrasenia" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblRepContrasenia" runat="server" Text="Repetir Contraseña: "></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxRepContrasenia" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBoxRepContrasenia" runat="server"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="RFVRepContrasenia" runat="server" ControlToValidate="TextBoxRepContrasenia" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblEmail" runat="server" Text="Correo electrónico: "></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ControlToValidate="TextBoxEmail" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblCP" runat="server" Text="CP: "></asp:Label></td>
-                    <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBoxCP" runat="server"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="RFVcP" runat="server" ControlToValidate="TextBoxCP" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblUsuarioLocalidad" runat="server" Text="Localidades: "></asp:Label>
                     </td>
-                    <td><asp:DropDownList ID="DDLLocalidades" runat="server"></asp:DropDownList></td>
+                    <td><asp:DropDownList ID="DDLLocalidades" runat="server"></asp:DropDownList>
+                          <asp:RequiredFieldValidator ID="RFVLocalidades" runat="server" ControlToValidate="DDLLocalidades" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><asp:Button ID="BtnGuardarUsuario" runat="server" Text="Guardar Usuario" /></td>
+                    <td><asp:Button ID="BtnGuardarUsuario" runat="server" Text="Guardar Usuario" OnClick="BtnGuardarUsuario_Click" ValidationGroup="Usuario" /></td>
                 </tr>
               
                 <tr>
-                    <td><asp:Button ID="BtnIrAInicio" runat="server" Text="Ir a inicio .aspx" /></td>
+                    <td><asp:Button ID="BtnIrAInicio" runat="server" Text="Ir a inicio .aspx" CausesValidation="False" /></td>
 
                 </tr>
             </table>
