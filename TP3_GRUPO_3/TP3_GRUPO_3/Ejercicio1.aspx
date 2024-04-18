@@ -23,9 +23,9 @@
                 <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Nombre de la localidad"></asp:Label></td>
                     <td><asp:TextBox ID="TextBoxLocalidad" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RfvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad">Ingrese nueva localidad</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RevLocalidad" runat="server" ControlToValidate="TextBoxLocalidad"  ValidationExpression="[\w ]+">Contiene caracteres invalidos</asp:RegularExpressionValidator>
-                        <asp:CustomValidator ID="CvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" OnServerValidate="CustomValidator1_ServerValidate">Localidad ya existente</asp:CustomValidator>
+                        <asp:RequiredFieldValidator ID="RfvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ValidationGroup="Localidades">Ingrese nueva localidad</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ValidationGroup="Localidades"  ValidationExpression="[\w ]+">Contiene caracteres invalidos</asp:RegularExpressionValidator>
+                        <asp:CustomValidator ID="CvLocalidad" runat="server" ControlToValidate="TextBoxLocalidad" ValidationGroup="Localidades" OnServerValidate="CustomValidator1_ServerValidate">Localidad ya existente</asp:CustomValidator>
                     </td>
                 </tr>
                 <tr>
@@ -80,11 +80,13 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><asp:Button ID="BtnGuardarUsuario" runat="server" Text="Guardar Usuario" OnClick="BtnGuardarUsuario_Click" ValidationGroup="Usuario" /></td>
+                    <td><asp:Button ID="BtnGuardarUsuario" runat="server" Text="Guardar Usuario" OnClick="BtnGuardarUsuario_Click" ValidationGroup="Usuario" />
+                    </td>
+                    <td><asp:Label ID="LblMensaje" runat="server" Font-Bold="True"></asp:Label></td>
                 </tr>
               
                 <tr>
-                    <td><asp:Button ID="BtnIrAInicio" runat="server" Text="Ir a inicio .aspx" CausesValidation="False" /></td>
+                    <td><asp:Button ID="BtnIrAInicio" runat="server" Text="Ir a inicio .aspx" CausesValidation="False" OnClick="BtnIrAInicio_Click" /></td>
 
                 </tr>
             </table>

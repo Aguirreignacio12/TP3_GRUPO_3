@@ -37,8 +37,12 @@ namespace TP3_GRUPO_3
 
         protected void BtnGuardarUsuario_Click(object sender, EventArgs e)
         {
-            
+            LblMensaje.Text = $@"Bienvenido {TextBoxUsuario.Text}";  
+        }
 
+        protected void BtnIrAInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
         }
     }
 }
