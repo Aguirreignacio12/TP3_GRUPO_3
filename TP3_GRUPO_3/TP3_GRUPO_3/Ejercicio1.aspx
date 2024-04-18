@@ -41,30 +41,34 @@
                     <td><asp:Label ID="LblUsuario" runat="server" Text="Nombre de usuario:"></asp:Label></td>
                     <td><asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox>
                          <asp:RequiredFieldValidator ID="RFVUsuario" runat="server" ControlToValidate="TextBoxUsuario" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevNombre" runat="server" ControlToValidate="TextBoxUsuario" ValidationExpression="[a-zA-Z ]+" ValidationGroup="Usuario">Contiene caracteres invalidos</asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblContrasenia" runat="server" Text="Contraseña:"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxContrasenia" runat="server"></asp:TextBox>
+                    <td><asp:TextBox ID="TextBoxContrasenia" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RFVContrasenia" runat="server" ControlToValidate="TextBoxContrasenia" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblRepContrasenia" runat="server" Text="Repetir Contraseña: "></asp:Label></td>
-                    <td><asp:TextBox ID="TextBoxRepContrasenia" runat="server"></asp:TextBox>
+                    <td><asp:TextBox ID="TextBoxRepContrasenia" runat="server" TextMode="Password"></asp:TextBox>
                           <asp:RequiredFieldValidator ID="RFVRepContrasenia" runat="server" ControlToValidate="TextBoxRepContrasenia" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CVContraseña" runat="server" ControlToCompare="TextBoxContrasenia" ControlToValidate="TextBoxRepContrasenia" ValidationGroup="Usuario">Las contraseñas no coinciden</asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblEmail" runat="server" Text="Correo electrónico: "></asp:Label></td>
                     <td><asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
                           <asp:RequiredFieldValidator ID="RFVEmail" runat="server" ControlToValidate="TextBoxEmail" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="REVCorreo" runat="server" ControlToValidate="TextBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Usuario">Introduzca una direccion de correo valida</asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
                     <td><asp:Label ID="LblCP" runat="server" Text="CP: "></asp:Label></td>
                     <td><asp:TextBox ID="TextBoxCP" runat="server"></asp:TextBox>
                           <asp:RequiredFieldValidator ID="RFVcP" runat="server" ControlToValidate="TextBoxCP" ValidationGroup="Usuario">Campo son obligatorio</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RevCP" runat="server" ControlToValidate="TextBoxCP" ValidationExpression="\d{4}" ValidationGroup="Usuario">Introduzca un codigo postal valido</asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>

@@ -123,6 +123,15 @@ namespace TP3_GRUPO_3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVUsuario;
 
         /// <summary>
+        /// Control RevNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevNombre;
+
+        /// <summary>
         /// Control LblContrasenia.
         /// </summary>
         /// <remarks>
@@ -177,6 +186,15 @@ namespace TP3_GRUPO_3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVRepContrasenia;
 
         /// <summary>
+        /// Control CVContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CVContraseña;
+
+        /// <summary>
         /// Control LblEmail.
         /// </summary>
         /// <remarks>
@@ -204,6 +222,15 @@ namespace TP3_GRUPO_3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVEmail;
 
         /// <summary>
+        /// Control REVCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVCorreo;
+
+        /// <summary>
         /// Control LblCP.
         /// </summary>
         /// <remarks>
@@ -229,6 +256,15 @@ namespace TP3_GRUPO_3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVcP;
+
+        /// <summary>
+        /// Control RevCP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevCP;
 
         /// <summary>
         /// Control LblUsuarioLocalidad.
